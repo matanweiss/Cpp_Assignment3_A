@@ -30,21 +30,21 @@ public:
     Fraction operator++(int dummy);
     Fraction &operator--();
     Fraction operator--(int dummy);
-    bool operator<=(Fraction const &);
-    bool operator>=(Fraction const &);
-    bool operator<(Fraction const &);
-    bool operator>(Fraction const &);
+    bool operator<=(const Fraction &) const;
+    bool operator>=(const Fraction &) const;
+    bool operator<(const Fraction &) const;
+    bool operator>(const Fraction &) const;
     bool operator>(float);
     bool operator<(float);
     bool operator>=(float);
     bool operator<=(float);
-    friend bool operator<=(float, Fraction const &);
-    friend bool operator>=(float, Fraction const &);
-    friend bool operator<(float, Fraction const &);
-    friend bool operator>(float, Fraction const &);
-    bool operator==(Fraction const &);
+    friend bool operator<=(float, const Fraction &);
+    friend bool operator>=(float, const Fraction &);
+    friend bool operator<(float, const Fraction &);
+    friend bool operator>(float, const Fraction &);
+    bool operator==(const Fraction &) const;
     bool operator==(float);
-    friend bool operator==(float, Fraction const &);
+    friend bool operator==(float, const Fraction &);
 };
 
 // }
