@@ -1,7 +1,7 @@
 #include "doctest.h"
 #include "sources/Fraction.hpp"
 
-TEST_CASE("Reduced Form")
+TEST_CASE("Arithmetic Operators & Reduced Form")
 {
     // 3/7 + 5/21 = 14/21 -> 2/3
     CHECK((Fraction(3, 7) + Fraction(5, 21) == Fraction(2, 3)));
@@ -24,7 +24,7 @@ TEST_CASE("Reduced Form")
     CHECK((Fraction(6, 4) / ((float)4 / 18) == Fraction(27, 4)));
 }
 
-TEST_CASE("Comparison")
+TEST_CASE("Comparison Operators")
 {
     // Fraction (operator) Fraction
     CHECK((Fraction(4, 5) < Fraction(4, 4)));
@@ -57,4 +57,18 @@ TEST_CASE("Constructor")
     CHECK((Fraction(1, 3) == Fraction(3, 9)));
     CHECK((Fraction(3, 4) == Fraction(9, 12)));
     CHECK((0.75 == Fraction(9, 12)));
+}
+
+TEST_CASE("Increment & Decrement Operators")
+{
+    // increment
+    Fraction fraction(1, 1);
+    CHECK(fraction++ == Fraction(1, 1));
+    CHECK(fraction == Fraction(2, 1));
+    CHECK(++fraction == Fraction(3, 1));
+
+    // decrement
+    CHECK(fraction-- == Fraction(3, 1));
+    CHECK(fraction == Fraction(2, 1));
+    CHECK(--fraction == Fraction(1, 1));
 }
